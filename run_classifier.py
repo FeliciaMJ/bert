@@ -30,7 +30,7 @@ flags = tf.flags
 
 FLAGS = flags.FLAGS
 
-## Required parameters
+# Required parameters
 flags.DEFINE_string(
     "data_dir", None,
     "The input data dir. Should contain the .tsv files (or other data files) "
@@ -213,8 +213,7 @@ class XnliProcessor(DataProcessor):
     def get_train_examples(self, data_dir):
         """See base class."""
         lines = self._read_tsv(
-            os.path.join(data_dir, "multinli",
-                         "multinli.train.%s.tsv" % self.language))
+            os.path.join(data_dir, "multinli", "multinli.train.%s.tsv" % self.language))
         examples = []
         for (i, line) in enumerate(lines):
             if i == 0:
